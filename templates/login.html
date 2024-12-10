@@ -1,10 +1,41 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f3f4f6; /* Color de fondo suave */
+        }
+
+        h1 {
+            font-size: 5rem; /* Tamaño grande */
+            color: #60ebd8; /* Color azul llamativo */
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
+    <h1>Bienvenido al Sistema</h1>
     <div class="login-container">
         <form method="POST" action="{{ url_for('auth.login') }}">
             <h2>Iniciar Sesión</h2>

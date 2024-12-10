@@ -197,7 +197,7 @@ body {
     width: 100%;
     max-width: 450px;
     text-align: center;
-    background: linear-gradient(135deg, #ff6f00, #007bff); /* Degradado naranja y azul */
+    background: linear-gradient(135deg, #043d04, #1fbb0a); /* Degradado naranja y azul */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     border: 3px solid transparent;
     background-clip: padding-box;
@@ -220,7 +220,7 @@ h2 {
 .input-group label {
     display: block;
     font-size: 14px;
-    color: #333;
+    color: #000000;
     margin-bottom: 8px;
 }
 
@@ -237,7 +237,7 @@ h2 {
 
 /* Estilo cuando los campos de entrada están enfocados */
 .input-group input:focus {
-    border-color: #ff6f00; /* Naranja */
+    border-color: #000000; /* Naranja */
     outline: none;
 }
 
@@ -246,8 +246,8 @@ h2 {
     width: 100%;
     padding: 12px;
     font-size: 16px;
-    background-color: #ff6f00; /* Naranja */
-    color: white;
+    background-color: #2b0d53; /* Naranja */
+    color: rgb(204, 136, 136);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -257,7 +257,7 @@ h2 {
 
 /* Efecto cuando el botón es hover */
 .btn-submit:hover {
-    background-color: #e65100; /* Naranja oscuro */
+    background-color: #157891; /* Naranja oscuro */
 }
 
 /* Estilos para mensajes de error o éxito */

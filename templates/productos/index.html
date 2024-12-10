@@ -4,35 +4,28 @@
 
 {% block content %}
 
-<h1>Lista de productos</h1>
+<h1 class="mb-4">Lista de productos</h1>
 
-<a href="{{url_for('producto.create')}}" class="btn btn-success mb-3">Nuevo</a>
+<a href="{{ url_for('producto.create') }}" class="btn btn-success mb-3">Nuevo</a>
 
-<table class="table table-striped">
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Precio</th>
-        <th>Stock</th>
-        <th>Acción</th>
-        <th>Acción</th>
-    </tr>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
     {% for item in productos %}
-    <tr>
-        <td>{{ item.id }}</td>
-        <td>{{ item.nombre }}</td>
-        <td>{{ item.descripcion }}</td>
-        <td>{{ item.precio | round(2) }}</td>
-        <td>{{ item.stock }}</td>
-        <td>
-            <a href="{{url_for('producto.edit',id=item.id)}}" class="btn btn-warning">Editar</a>
-        </td>
-        <td>
-            <a href="{{ url_for('producto.delete',id=item.id) }}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</a>
-        </td>
-    </tr>
+    <div class="col">
+        <div class="card h-100">
+            <img src="{{ item.imagen_url or 'https://via.placeholder.com/150' }}" class="card-img-top" alt="{{ item.nombre }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.nombre }}</h5>
+                <p class="card-text">{{ item.descripcion }}</p>
+                <p class="card-text fw-bold">Precio: ${{ item.precio | round(2) }}</p>
+                <p class="card-text">Stock: {{ item.stock }}</p>
+            </div>
+            <div class="card-footer d-flex justify-content-around">
+                <a href="{{ url_for('producto.edit', id=item.id) }}" class="btn btn-warning">Editar</a>
+                <a href="{{ url_for('producto.delete', id=item.id) }}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</a>
+            </div>
+        </div>
+    </div>
     {% endfor %}
-</table>
+</div>
 
 {% endblock %}

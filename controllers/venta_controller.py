@@ -106,7 +106,8 @@ def edit(id):
 
     clientes = Cliente.query.all()
     productos = Producto.query.all()
-    return venta_view.edit(venta, clientes, productos)
+    empleados = Usuario.query.all()  # Obtén la lista de empleados de la base de datos
+    return venta_view.edit(venta, clientes, productos, empleados)
 
 @venta_bp.route("/delete/<int:id>")
 def delete(id):
