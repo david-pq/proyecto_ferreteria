@@ -105,6 +105,8 @@ def edit(id):
         return redirect(url_for('venta.index'))
 
     clientes = Cliente.query.all()
+
+    
     productos = Producto.query.all()
     empleados = Usuario.query.all()  # Obtén la lista de empleados de la base de datos
     return venta_view.edit(venta, clientes, productos, empleados)
